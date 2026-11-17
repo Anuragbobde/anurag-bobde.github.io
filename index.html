@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anurag Bobde – Full Stack Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f8fb;--surface:#fff;--ink:#111827;--muted:#5b6475;--line:#e1e6ee;--accent:#0d9488;--accent-ink:#fff;--soft:#e3f5f2;
+--font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1118;--surface:#131b25;--ink:#eef2f7;--muted:#9aa6b8;--line:#223041;--accent:#2dd4bf;--accent-ink:#06201c;--soft:#0f2a29}}
+:root[data-theme="dark"]{--bg:#0b1118;--surface:#131b25;--ink:#eef2f7;--muted:#9aa6b8;--line:#223041;--accent:#2dd4bf;--accent-ink:#06201c;--soft:#0f2a29}
+html{scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.7 var(--font);overflow-x:hidden;transition:background .3s,color .3s}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-weight:800;font-size:1.2rem;text-decoration:none}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+.nav a.l{text-decoration:none;color:var(--muted);font-weight:500}.nav a.l:hover{color:var(--ink)}
+.tbtn{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;font:500 .9rem var(--font);cursor:pointer}
+@media(max-width:640px){.nav ul{display:none}}
+/* sliding reveal */
+.js .rv{opacity:0;transform:translateX(-60px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rv.right{transform:translateX(60px)}
+.js .rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s!important}.d2{transition-delay:.2s!important}.d3{transition-delay:.3s!important}
+/* hero */
+.hero{padding:96px 0 72px}
+.hero .hi{color:var(--accent);font-weight:600;margin:0 0 10px}
+h1{font-size:clamp(2.6rem,8vw,5.5rem);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:0 0 18px}
+.roleline{font-size:clamp(1.3rem,3.4vw,2rem);font-weight:600;display:flex;gap:.4em;align-items:center;flex-wrap:wrap}
+.slider{display:inline-block;height:1.4em;overflow:hidden;color:var(--accent);line-height:1.4}
+.slider ul{list-style:none;margin:0;padding:0;transition:transform .6s cubic-bezier(.7,0,.2,1)}
+.slider li{height:1.4em;white-space:nowrap}
+.lead{max-width:58ch;color:var(--muted);margin:22px 0 32px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 26px;border-radius:12px;text-decoration:none;font-weight:600;border:1px solid var(--line);background:var(--surface);transition:transform .2s}
+.btn.p{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{transform:translateY(-2px)}
+/* marquee */
+.marq{overflow:hidden;border-block:1px solid var(--line);background:var(--surface);padding:16px 0}
+.track{display:flex;gap:40px;width:max-content;animation:slide 28s linear infinite}
+.marq:hover .track{animation-play-state:paused}
+.track span{font-weight:700;font-size:1.25rem;color:var(--muted);white-space:nowrap}
+.track span::after{content:"•";margin-left:40px;color:var(--accent)}
+@keyframes slide{to{transform:translateX(-50%)}}
+section{padding:80px 0}
+h2{font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.1;letter-spacing:-.025em;font-weight:800;margin:0 0 12px}
+.intro{color:var(--muted);max-width:58ch;margin:0 0 36px}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start}
+@media(max-width:800px){.about{grid-template-columns:1fr}}
+.facts{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:16px}
+.facts li{display:flex;justify-content:space-between;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line)}
+.facts li:last-child{border:0}.facts b{font-weight:500;color:var(--muted)}.facts span{text-align:right}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:12px}
+.card h3{margin:0;font-size:1.25rem;line-height:1.25;font-weight:700}
+.card p,.card ul{margin:0;color:var(--muted)}.card ul{padding-left:1.1em}.card li{margin-bottom:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.tags span{background:var(--soft);color:var(--accent);font-size:.82rem;font-weight:600;padding:3px 10px;border-radius:999px}
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 32px 30px}
+.tl li::before{content:"";position:absolute;left:-7px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.tl h3{margin:0;font-size:1.15rem;font-weight:700}.tl small{color:var(--muted);font-weight:500}
+.tl p{margin:6px 0 0;max-width:62ch;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 40px}
+.skills div{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.skills b{font-weight:600;min-width:100px}.skills span{color:var(--muted)}
+form{display:grid;gap:16px;max-width:540px}
+label{display:grid;gap:6px;font-weight:600}
+input,textarea{font:inherit;font-weight:400;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+button.btn{cursor:pointer;font-family:var(--font);font-size:1rem}
+#status{min-height:1.5em;color:var(--muted)}
+.contact{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:28px;font-weight:500}
+footer{padding:28px 0 44px;color:var(--muted);border-top:1px solid var(--line)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track{animation:none}.js .rv{opacity:1;transform:none;transition:none}.slider ul{transition:none}}
+</style>
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top">Anurag Bobde</a>
+  <ul><li><a class="l" href="#about">About</a></li><li><a class="l" href="#projects">Projects</a></li><li><a class="l" href="#experience">Experience</a></li><li><a class="l" href="#contact">Contact</a></li></ul>
+  <button class="tbtn" id="theme" aria-label="Switch between light and dark theme"><span id="ticon" aria-hidden="true">☾</span><span id="tlabel">Dark</span></button>
+</div></header>
+
+<main id="top">
+<div class="wrap hero">
+  <p class="hi rv">Hello, I’m</p>
+  <h1 class="rv d1">Anurag Vijay Bobde</h1>
+  <div class="roleline rv right d2"><span>I’m a</span>
+    <span class="slider" aria-live="off"><ul id="roles"><li>Full Stack Developer</li><li>Java Developer</li><li>Software Engineer</li><li>React Developer</li><li>Full Stack Developer</li></ul></span></div>
+  <p class="lead rv d3">Computer Science graduate from Nagpur who builds responsive web apps and database-driven systems with Java, JavaScript, React and MySQL.</p>
+  <div class="btns rv d3"><a class="btn p" href="#projects">View projects</a><a class="btn" href="#contact">Contact me</a></div>
+</div>
+
+<div class="marq" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<section id="about"><div class="wrap about">
+  <div class="rv"><h2>About me</h2>
+    <p>I have hands-on experience in full-stack web development, debugging and testing, with internships covering front end, back end and database integration.</p>
+    <p>I enjoy solving problems, writing clean code and turning ideas into working software.</p></div>
+  <ul class="facts rv right d1">
+    <li><b>Location</b><span>Nagpur, Maharashtra</span></li>
+    <li><b>Degree</b><span>B.Tech, Computer Science</span></li>
+    <li><b>University</b><span>RTMNU Nagpur</span></li>
+    <li><b>Focus</b><span>Java, JavaScript, React, MySQL</span></li>
+  </ul>
+</div></section>
+
+<section id="projects" style="padding-top:0"><div class="wrap">
+  <h2 class="rv">Projects</h2>
+  <p class="intro rv d1">Web platforms and database designs built around real-world rules.</p>
+  <div class="grid">
+    <article class="card rv"><h3>Travel and Tourism Management System</h3>
+      <p>A unified web platform for tour booking, travel guidance, bus and flight booking, maps, real estate and food delivery.</p>
+      <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>MySQL</span></div></article>
+    <article class="card rv right d1"><h3>Event Management System</h3>
+      <p>A database for events, tickets, sponsors, participants and schedules, with optimised queries that handle event overlaps, participant limits and sponsor integration.</p>
+      <div class="tags"><span>MySQL</span><span>Database design</span></div></article>
+    <article class="card rv d2"><h3>Indian Festival Season Marketing System</h3>
+      <p>A database for festival marketing data covering product sales, promotions and customer engagement, with tables for festivals, campaigns, vendors, products, customers and sales.</p>
+      <div class="tags"><span>MySQL</span><span>Database design</span></div></article>
+  </div>
+</div></section>
+
+<section id="experience" style="padding-top:0"><div class="wrap">
+  <h2 class="rv">Experience</h2>
+  <ul class="tl" style="margin-top:32px">
+    <li class="rv"><h3>Full Stack Developer Intern, Edunet Foundation</h3><small>January 2024 – March 2024</small><p>Built responsive web applications, contributed to front-end UI, and assisted with backend development and database integration.</p></li>
+    <li class="rv right"><h3>Web Development Intern, Prodigy Infotech</h3><small>September 2023 – October 2023</small><p>Built responsive, user-friendly pages with HTML, CSS and JavaScript, and practised debugging, testing and optimisation.</p></li>
+    <li class="rv"><h3>Java Developer Intern, Techno Hacks</h3><small>August 2023 – September 2023</small><p>Worked in a service-based environment covering web development, SEO and research.</p></li>
+  </ul>
+</div></section>
+
+<section id="skills" style="padding-top:0"><div class="wrap">
+  <h2 class="rv">Skills</h2>
+  <div class="skills" style="margin-top:28px">
+    <div class="rv"><b>Languages</b><span>Java (OOPs), HTML5, CSS, JavaScript</span></div>
+    <div class="rv right"><b>Web</b><span>React JS, Node.js</span></div>
+    <div class="rv"><b>Database</b><span>MySQL, SQL</span></div>
+    <div class="rv right"><b>Testing</b><span>SDLC, STLC, functional, regression and smoke testing, test case design</span></div>
+    <div class="rv"><b>Methods</b><span>Agile, Scrum, V-Model</span></div>
+    <div class="rv right"><b>Tools</b><span>Eclipse, GitHub, VS Code, JIRA</span></div>
+  </div>
+</div></section>
+
+<section id="education" style="padding-top:0"><div class="wrap about">
+  <div class="rv"><h2>Education</h2>
+    <ul class="tl" style="margin-top:28px">
+      <li><h3>B.Tech, Computer Science and Engineering</h3><small>2020 – 2024 · RTMNU, Nagpur</small></li>
+      <li><h3>HSC (12th), Computer Science</h3><small>2018 – 2020 · Nagpur</small></li>
+      <li><h3>Secondary School (10th), CBSE</h3><small>2017 – 2018 · Nagpur</small></li>
+    </ul></div>
+  <div class="rv right d1"><h2>Certifications</h2>
+    <ul class="facts" style="margin-top:28px">
+      <li><span>Microsoft Cloud for Sustainability Overview</span></li>
+      <li><span>Java Full Stack, QSpiders Institute (Pune)</span></li>
+      <li><span>Communication Enhancement Skills (participation)</span></li>
+    </ul></div>
+</div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap">
+  <h2 class="rv">Let’s work together</h2>
+  <p class="intro rv d1">I’m looking for software engineering and full-stack roles. Send a message and I’ll reply by email.</p>
+  <form id="form" novalidate class="rv">
+    <label>Name<input name="name" required autocomplete="name"></label>
+    <label>Email<input name="email" type="email" required autocomplete="email"></label>
+    <label>Message<textarea name="msg" required></textarea></label>
+    <div><button class="btn p" type="submit">Send message</button></div>
+    <div id="status" role="status"></div>
+  </form>
+  <div class="contact rv right">
+    <a href="mailto:bobdeanurag162@gmail.com">bobdeanurag162@gmail.com</a>
+    <a href="tel:+917410745776">+91 74107 45776</a>
+    <a href="https://www.linkedin.com/in/anurag-bobde-55b25a259/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/Anuragbobde" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">© <span id="yr"></span> Anurag Vijay Bobde</div></footer>
+
+<script>
+const $ = s => document.querySelector(s);
+$("#yr").textContent = new Date().getFullYear();
+
+/* scroll slide-in */
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.15});
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+
+/* skills marquee */
+const items = ["Java","JavaScript","React JS","Node.js","HTML5","CSS","MySQL","SQL","Agile","Scrum","GitHub","JIRA","Testing"];
+$("#track").innerHTML = [...items, ...items].map(s => `<span>${s}</span>`).join("");
+
+/* sliding role text */
+(function(){
+  const ul = $("#roles"), n = ul.children.length - 1; let i = 0;
+  if(matchMedia("(prefers-reduced-motion:reduce)").matches) return;
+  setInterval(() => {
+    const h = ul.children[0].offsetHeight; i++;
+    ul.style.transition = "transform .6s cubic-bezier(.7,0,.2,1)";
+    ul.style.transform = `translateY(${-i*h}px)`;
+    if(i === n){ setTimeout(() => { ul.style.transition = "none"; ul.style.transform = "translateY(0)"; i = 0; }, 650); }
+  }, 2400);
+})();
+
+/* light / dark theme */
+function setLabel(){
+  const r = document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme:dark)").matches;
+  $("#ticon").textContent = dark ? "☀" : "☾";
+  $("#tlabel").textContent = dark ? "Light" : "Dark";
+}
+$("#theme").addEventListener("click", () => {
+  const r = document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme:dark)").matches;
+  r.dataset.theme = dark ? "light" : "dark";
+  try { localStorage.setItem("theme", r.dataset.theme); } catch(e){}
+  setLabel();
+});
+try { const t = localStorage.getItem("theme"); if(t) document.documentElement.dataset.theme = t; } catch(e){}
+setLabel();
+
+/* contact form: sends straight to your inbox through Web3Forms.
+   1) Go to https://web3forms.com, enter bobdeanurag162@gmail.com, and get your free access key by email.
+   2) Paste the key below. */
+const FORM_KEY = "674414bb-a88b-4ee7-a60d-4d1e5607c7ee";
+$("#form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = e.target, st = $("#status"), btn = f.querySelector("button");
+  if(!f.name.value.trim() || !/^\S+@\S+\.\S+$/.test(f.email.value) || !f.msg.value.trim()){ st.textContent = "Please add your name, a valid email and a message."; return; }
+  const mailFallback = () => {
+    const body = `${f.msg.value}\n\nFrom: ${f.name.value} (${f.email.value})`;
+    location.href = `mailto:bobdeanurag162@gmail.com?subject=${encodeURIComponent("Portfolio message from " + f.name.value)}&body=${encodeURIComponent(body)}`;
+    st.textContent = "Opening your email app instead…";
+  };
+  if(FORM_KEY === "674414bb-a88b-4ee7-a60d-4d1e5607c7ee"){ mailFallback(); return; }
+  btn.disabled = true; st.textContent = "Sending…";
+  try{
+    const r = await fetch("https://api.web3forms.com/submit", {
+      method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body: JSON.stringify({access_key:FORM_KEY, subject:"New portfolio message from " + f.name.value, name:f.name.value, email:f.email.value, message:f.msg.value})
+    });
+    const d = await r.json();
+    if(d.success){ st.textContent = "Thank you! Your message was sent. I’ll reply soon."; f.reset(); }
+    else { st.textContent = "Could not send the message. Please try again or email me directly."; }
+  }catch(err){ mailFallback(); }
+  btn.disabled = false;
+});
+</script>
+</body>
+</html>
